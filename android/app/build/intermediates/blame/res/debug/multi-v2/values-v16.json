@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "/home/dmr1204/Desktop/flappy-bird-react-native/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "/home/cometacos/Workspaces/react-native/flappy-bird-react-native/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/dmr1204/.gradle/caches/transforms-2/files-2.1/a9fefec2f3bd07a6c3ed7a70350f5b7a/res/values-v16/values-v16.xml",
+                    "source": "/home/cometacos/.gradle/caches/transforms-2/files-2.1/7a1c9aad406f9bbb3ec2fd1b0c67378c/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/home/cometacos/.gradle/caches/transforms-2/files-2.1/0b06f47f99a0c856cc0cd4b5ac07d709/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "/home/dmr1204/.gradle/caches/transforms-2/files-2.1/da14326454b9ab914ffd26580e805349/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
                     }
                 }
             ]

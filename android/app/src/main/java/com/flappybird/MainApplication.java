@@ -1,4 +1,4 @@
-package com.flappybird;
+package com.flappykrash;
 
 import android.app.Application;
 import android.util.Log;

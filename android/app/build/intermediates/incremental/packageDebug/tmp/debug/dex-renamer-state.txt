@@ -1,4 +1,4 @@
-#Sat May 30 19:48:09 CST 2020
-base.0=/home/dmr1204/Desktop/flappy-bird-react-native/android/app/build/intermediates/transforms/dexMerger/debug/0
-renamed.0=classes.dex
+#Sun Aug 23 02:04:09 CST 2020
+base.0=/home/cometacos/Workspaces/react-native/flappy-bird-react-native/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
+renamed.0=classes.dex

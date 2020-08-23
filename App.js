@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import { Dimensions, StyleSheet, Text, View, StatusBar, Alert, TouchableOpacity, Image } from 'react-native';
 import Matter from "matter-js";
 import { GameEngine } from "react-native-game-engine";
-import Bird from './Bird';
-import Floor from './Floor';
-import Physics, { resetPipes } from './Physics';
-import Constants from './Constants';
+import Bird from './app/components/Bird';
+import Floor from './app/components/Floor';
+import Physics, { resetPipes } from './app/components/Physics';
+import Constants from './app/components/Constants';
 import Images from './assets/Images';
 
+import { NavigationContainer, CommonActions } from '@react-navigation/native';
+import Navigation from './app/Navigation'
+
 export default class App extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -27,7 +30,7 @@ export default class App extends Component {
         let world = engine.world;
         world.gravity.y = 0.0;
 
-        let bird = Matter.Bodies.rectangle( Constants.MAX_WIDTH / 2, Constants.MAX_HEIGHT / 2, Constants.BIRD_WIDTH, Constants.BIRD_HEIGHT);
+        let bird = Matter.Bodies.rectangle(Constants.MAX_WIDTH / 2, Constants.MAX_HEIGHT / 2, Constants.BIRD_WIDTH, Constants.BIRD_HEIGHT);
 
         let floor1 = Matter.Bodies.rectangle(
             Constants.MAX_WIDTH / 2,
@@ -50,7 +53,7 @@ export default class App extends Component {
         Matter.Events.on(engine, 'collisionStart', (event) => {
             var pairs = event.pairs;
 
-            this.gameEngine.dispatch({ type: "game-over"});
+            this.gameEngine.dispatch({ type: "game-over" });
 
         });
 
@@ -58,12 +61,12 @@ export default class App extends Component {
             physics: { engine: engine, world: world },
             floor1: { body: floor1, renderer: Floor },
             floor2: { body: floor2, renderer: Floor },
-            bird: { body: bird, pose: 1, renderer: Bird},
+            bird: { body: bird, pose: 1, renderer: Bird },
         }
     }
 
     onEvent = (e) => {
-        if (e.type === "game-over"){
+        if (e.type === "game-over") {
             //Alert.alert("Game Over");
             this.setState({
                 running: false
@@ -86,25 +89,9 @@ export default class App extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Image source={Images.background} style={styles.backgroundImage} resizeMode="stretch" />
-                <GameEngine
-                    ref={(ref) => { this.gameEngine = ref; }}
-                    style={styles.gameContainer}
-                    systems={[Physics]}
-                    running={this.state.running}
-                    onEvent={this.onEvent}
-                    entities={this.entities}>
-                    <StatusBar hidden={true} />
-                </GameEngine>
-                <Text style={styles.score}>{this.state.score}</Text>
-                {!this.state.running && <TouchableOpacity style={styles.fullScreenButton} onPress={this.reset}>
-                    <View style={styles.fullScreen}>
-                        <Text style={styles.gameOverText}>Game Over</Text>
-                        <Text style={styles.gameOverSubText}>Try Again</Text>
-                    </View>
-                </TouchableOpacity>}
-            </View>
+            <NavigationContainer>
+                <Navigation />
+            </NavigationContainer>
         );
     }
 }
@@ -158,7 +145,7 @@ const styles = StyleSheet.create({
         top: 50,
         left: Constants.MAX_WIDTH / 2 - 20,
         textShadowColor: '#444444',
-        textShadowOffset: { width: 2, height: 2},
+        textShadowOffset: { width: 2, height: 2 },
         textShadowRadius: 2,
         fontFamily: '04b_19'
     },

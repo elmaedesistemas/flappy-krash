@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/dmr1204/Desktop/flappy-bird-react-native/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml",
+            "outputFile": "/home/cometacos/Workspaces/react-native/flappy-bird-react-native/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "/home/dmr1204/.gradle/caches/transforms-2/files-2.1/a9fefec2f3bd07a6c3ed7a70350f5b7a/res/values-v25/values-v25.xml",
+                    "source": "/home/cometacos/.gradle/caches/transforms-2/files-2.1/0b06f47f99a0c856cc0cd4b5ac07d709/res/values-v25/values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",
